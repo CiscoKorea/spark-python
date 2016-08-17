@@ -7,6 +7,7 @@ logging.getLogger()
 
 
 class Session(object):
+    
     def __init__(self, url, token):
         self.base_url = url + '/v1'
 
@@ -16,6 +17,12 @@ class Session(object):
     def get(self, url):
         url = self.base_url + url
         resp = requests.get(url, headers=self.headers)
+
+        return resp
+
+    def get2(self, url, payload):
+        url = self.base_url + url
+        resp = requests.get(url, params=payload, headers=self.headers)
 
         return resp
 
