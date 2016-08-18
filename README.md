@@ -15,4 +15,11 @@ $> python add_multiple_members.py
 
 ```
 
+# exporting member list from specific room 
+```
+#> update export_members.py with your token 
+#> python export_members.py ( answer room number )
+#> check export.csv with whole member list 
+```
+
 Enjoy !!!

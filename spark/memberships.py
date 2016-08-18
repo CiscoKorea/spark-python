@@ -79,6 +79,15 @@ class Membership(object):
         return ret
 
     @classmethod
+    def get_room_members(cls, session, payload):
+        ret = []
+        memberships = json.loads(session.get2(cls.url(), payload).text)['items']
+        for membership in memberships:
+            obj = cls.from_json(membership)
+            ret.append(obj)
+        return ret
+
+    @classmethod
     def create(cls, session, room, email):
         url = cls.url()
         m = Membership()
