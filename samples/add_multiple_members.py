@@ -6,26 +6,21 @@ from spark.rooms import Room
 from spark.session import Session
 from spark.memberships import Membership
 
-SPARK_KEY = 'your token '
-SPARK_ROOM = 'TestRoom2'
+SPARK_KEY = 'you key'
+SPARK_ROOM = 'SpartTestRoom2'
 
 
 if __name__ == '__main__':
 	try:
 		ss = Session('https://api.ciscospark.com', SPARK_KEY)
-		hdr=True
 		members = []
 		with open('sample.csv', 'r') as memfile:
 			reader = csv.reader(memfile, delimiter=',')
 			for row in reader:
-				if hdr:
-					hdr = False
-					continue
+				if '@' not in row[0]:
+					members.append(row[0]+'@cisco.com')
 				else:
-					if '@' not in row[0]:
-						members.append(row[0]+'@cisco.com')
-					else:
-						members.append(row[0])
+					members.append(row[0])
 
 		room = Room.get(ss, SPARK_ROOM)
 		if not isinstance(room, Room):

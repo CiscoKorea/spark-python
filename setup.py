@@ -19,7 +19,6 @@ setup(
     author_email=about["__email__"],
     url=about["__uri__"],
     license=about["__license__"],
-    install_requires=["requests",
-                      ],
+    install_requires=["requests", "flask-bootstrap" ],
     description="Python bindings for Cisco Spark API",
 )

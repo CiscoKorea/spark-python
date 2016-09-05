@@ -29,7 +29,6 @@ if __name__ == '__main__':
 		members = Membership.get_room_members(ss, qs)
 		with open('export.csv', 'w') as memfile:
 			writer = csv.writer(memfile, delimiter=',')
-			writer.writerow( ['member'])
 			for member in members:
 				writer.writerow( [ member.personEmail] )
 			print 'Total {} members are saved on export.csv'.format(len(members))
