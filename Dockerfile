@@ -3,7 +3,7 @@ MAINTAINER Hyung-Soo Kim <hyungsok@cisco.com>
 
 EXPOSE 8080
 
-RUN apt-get update && apt-get install python python-pip git -y 
+RUN apt-get update && apt-get install python python-pip python-dev git -y 
 RUN pip install flask
 RUN mkdir -p /opt
 WORKDIR /opt
