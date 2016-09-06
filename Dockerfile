@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 MAINTAINER Hyung-Soo Kim <hyungsok@cisco.com>
 
 EXPOSE 8080
