@@ -4,6 +4,12 @@ Python Bindings for Cisco Spark API
 
 update sample.csv with your member, in case of cisco member with username only 
 
+Sample Web Application hosted on ciscoshipped.io 
+```
+http://stg--easysparkstar--spark-python--699283.gce.shipped-cisco.com/
+
+```
+
 # installation 
 
 ```
